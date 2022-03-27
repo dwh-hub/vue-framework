@@ -1,0 +1,11 @@
+// 全局工具样式
+
+/* 最多显示$line行 */
+@mixin mult_line($line) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
