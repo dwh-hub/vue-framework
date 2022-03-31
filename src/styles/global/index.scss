@@ -1,2 +1,12 @@
-@import './variable.scss';
+// 全局变量
+$theme_color: #364FCD;
+
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': $theme_color,
+    ),
+  ),
+);
+
 @import './tools.scss';

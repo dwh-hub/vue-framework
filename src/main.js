@@ -5,6 +5,7 @@ import store from './store'
 import 'vue-global-api'
 import * as directives from './directive'
 import '@/assets/styles/reset.css'
+import './mock'
 
 const app = createApp(App)
 
