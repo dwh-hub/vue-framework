@@ -1,4 +1,4 @@
-import Layout from '@/layout/index.vue'
+import Layout from '@/views/layout/index.vue'
 
 const router = [
   {
@@ -11,14 +11,8 @@ const router = [
   },
   {
     path: '/:pathMatch(.*)*',
-    component: Layout,
-    children: [
-      {
-        path: '/',
-        name: 'home',
-        component: () => import('@/views/main/home.vue')
-      }
-    ]
+    name: 'admin',
+    component: Layout
   }
 ]
 
