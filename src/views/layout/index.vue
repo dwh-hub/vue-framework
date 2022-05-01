@@ -2,8 +2,11 @@
   <div class="layout">
     <el-container style="height: 100vh">
       <el-aside width="210px" class="aside">
-        <div class="aside_head">
-          <!-- <img class="logo_img" src="@/assets/images/logo.png" /> -->
+        <div class="aside-head">
+          <!-- <img class="logo-img" src="@/assets/images/logo.png" /> -->
+        </div>
+        <div class="menu-wrapper">
+          <layout-menu></layout-menu>
         </div>
       </el-aside>
       <el-container>
@@ -19,27 +22,33 @@
 </template>
 
 <script setup>
-import layoutHeader from './components/mian_header.vue'
+import layoutHeader from './components/mian-header.vue'
+import layoutMenu from './components/aside-menu.vue'
 </script>
 
 <style lang="scss" scoped>
 .layout {
   .aside {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 26px 0;
+    transition: 0.3s;
+    overflow-x: hidden;
     color: #fff;
     background: $theme_color;
-    height: 100vh;
-    padding: 26px 0;
-    position: relative;
-    transition: 0.3s;
-    overflow-x: hidden !important;
-    .aside_head {
+    .aside-head {
+      flex-shrink: 60px;
       width: 100%;
       padding-left: 45px;
       box-sizing: border-box;
-      .logo_img {
+      .logo-img {
         width: 77px;
         cursor: pointer;
       }
+    }
+    .menu-wrapper {
+      flex: 1;
     }
   }
   .header {

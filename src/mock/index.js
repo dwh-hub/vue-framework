@@ -21,14 +21,21 @@ Mock.mock('/menu', 'post', {
     },
     {
       name: 'demo',
-      path: '',
-      components: '',
+      path: '/demo',
+      components: '/',
       icon: '',
       children: [
         {
-          name: '公共table',
-          path: '',
-          components: '',
+          name: 'table示例',
+          path: '/demo/table',
+          components: 'example/table_demo',
+          icon: '',
+          children: []
+        },
+        {
+          name: '表单示例',
+          path: '/demo/form',
+          components: 'example/form_demo',
           icon: '',
           children: []
         }

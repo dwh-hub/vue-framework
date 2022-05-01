@@ -1,5 +1,5 @@
 <template>
-  <div>菜单列表</div>
+  <div>404</div>
 </template>
 
 <script setup></script>

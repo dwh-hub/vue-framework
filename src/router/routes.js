@@ -1,4 +1,24 @@
-import Main from './modules/main'
+import Layout from '@/views/layout/index.vue'
 
-const routes = [...Main]
-export default routes
+const router = [
+  {
+    path: '/login',
+    name: 'login',
+    meta: {
+      title: '登录'
+    },
+    component: () => import('@/views/main/login.vue')
+  },
+  {
+    path: '/404',
+    name: 'notFound',
+    component: () => import('@/views/main/404.vue')
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'admin',
+    component: Layout
+  }
+]
+
+export default router

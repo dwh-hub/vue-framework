@@ -2,11 +2,12 @@
  * @Author: dahuayuan
  * @Date: 2022-04-30 21:25:05
  * @LastEditors: dahuayuan
- * @LastEditTime: 2022-04-30 23:56:45
+ * @LastEditTime: 2022-05-01 21:05:17
  * @Description: 应用级别缓存
  */
 import { getMenus } from '@/api/login'
 import router from '@/router'
+import empty from '@/views/layout/empty.vue'
 
 /**
  * @description: 添加路由
@@ -23,11 +24,10 @@ function addRoutes(list, parentName) {
       }
       // 是否有子菜单
       if (item.children && item.children.length) {
-        route.component = () => import('@/layout/layout_index.vue')
+        route.component = empty
       } else {
         route.component = () => import(`../../views/${item.components}.vue`)
       }
-
       parentName ? router.addRoute(parentName, route) : router.addRoute('admin', route)
 
       if (item.children && item.children.length) {
@@ -52,6 +52,11 @@ export default {
       return new Promise((resolve, reject) => {
         getMenus()
           .then(res => {
+            router.addRoute({
+              path: '/:catchAll(.*)',
+              redirect: '/404',
+              name: 'NotFound'
+            })
             addRoutes(res.data)
             commit('setMenus', res.data)
             resolve()
