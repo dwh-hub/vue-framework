@@ -7,7 +7,7 @@
  */
 import { getMenus } from '@/api/login'
 import router from '@/router'
-import empty from '@/views/layout/empty.vue'
+import empty from '@/pages/layout/empty.vue'
 
 /**
  * @description: 添加路由
@@ -26,7 +26,7 @@ function addRoutes(list, parentName) {
       if (item.children && item.children.length) {
         route.component = empty
       } else {
-        route.component = () => import(`../../views/${item.components}.vue`)
+        route.component = () => import(`../../pages/${item.components}.vue`)
       }
       parentName ? router.addRoute(parentName, route) : router.addRoute('admin', route)
 

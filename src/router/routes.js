@@ -1,4 +1,4 @@
-import Layout from '@/views/layout/index.vue'
+import Layout from '@/pages/layout/index.vue'
 
 const router = [
   {
@@ -7,12 +7,12 @@ const router = [
     meta: {
       title: '登录'
     },
-    component: () => import('@/views/main/login.vue')
+    component: () => import('@/pages/main/login.vue')
   },
   {
     path: '/404',
     name: 'notFound',
-    component: () => import('@/views/main/404.vue')
+    component: () => import('@/pages/main/404.vue')
   },
   {
     path: '/:pathMatch(.*)*',
