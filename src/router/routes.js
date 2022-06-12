@@ -11,7 +11,7 @@ const router = [
   },
   {
     path: '/404',
-    name: 'notFound',
+    name: '404',
     component: () => import('@/pages/main/404.vue')
   },
   {

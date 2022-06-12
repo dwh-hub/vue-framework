@@ -47,7 +47,7 @@ function getMenuInfo() {
 // 挂载信息
 const defaultActive = computed(() => {
   const _routeInfo = getMenuInfo()
-  return _routeInfo.name
+  return _routeInfo ? _routeInfo.name : ''
 })
 </script>
 

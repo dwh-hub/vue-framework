@@ -2,7 +2,7 @@
  * @Author: dahuayuan
  * @Date: 2022-04-30 21:25:05
  * @LastEditors: dahuayuan
- * @LastEditTime: 2022-05-01 21:05:17
+ * @LastEditTime: 2022-06-07 23:22:21
  * @Description: 应用级别缓存
  */
 import { getMenus } from '@/api/login'
@@ -25,7 +25,9 @@ function addRoutes(list, parentName) {
       // 是否有子菜单
       if (item.children && item.children.length) {
         route.component = empty
+        route.redirect = item.children[0].path
       } else {
+        // TODO 改成动态路径
         route.component = () => import(`../../pages/${item.components}.vue`)
       }
       parentName ? router.addRoute(parentName, route) : router.addRoute('admin', route)
